@@ -65,7 +65,7 @@ export function activate(context: vscode.ExtensionContext) {
             
             // Find the path to the binary
             const extensionPath = context.extensionPath;
-            const binPath = path.join(extensionPath, 'bin', process.platform === 'win32' ? 'llm-cocop.exe' : 'llm-cocop');
+            const binPath = path.join(extensionPath, 'bin', process.platform === 'win32' ? 'llm-cocop-rs.exe' : 'llm-cocop');
             
             // Check if the binary exists
             if (!fs.existsSync(binPath)) {
