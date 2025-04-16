@@ -17,15 +17,15 @@ mkdir -p bin
 echo "Copying binary to extension folder..."
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
-    cp target/release/rust-code-copier bin/
-    chmod +x bin/rust-code-copier
+    cp target/release/llm_cocop_rs bin/
+    chmod +x bin/llm_cocop_rs
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
-    cp target/release/rust-code-copier bin/
-    chmod +x bin/rust-code-copier
+    cp target/release/llm_cocop_rs bin/
+    chmod +x bin/llm_cocop_rs
 elif [[ "$OSTYPE" == "msys"* || "$OSTYPE" == "win32" ]]; then
     # Windows
-    cp target/release/rust-code-copier.exe bin/
+    cp target/release/llm_cocop_rs.exe bin/
 else
     echo "Unsupported OS: $OSTYPE"
     exit 1

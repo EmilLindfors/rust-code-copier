@@ -16,7 +16,7 @@ if not exist bin mkdir bin
 
 REM Copy the binary to the bin directory
 echo Copying binary to extension folder...
-copy target\release\rust-code-copier.exe bin\
+copy target\release\llm_cocop_rs.exe bin\
 if %ERRORLEVEL% neq 0 (
     echo Failed to copy binary
     exit /b %ERRORLEVEL%
