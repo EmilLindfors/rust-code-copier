@@ -3,7 +3,11 @@
     "displayName": "Rust Code Copier for LLMs",
     "description": "Copy Rust project files to clipboard in LLM-friendly format",
     "version": "0.1.0",
-    "publisher": "your-publisher-name",
+    "publisher": "EmilLindfors",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/EmilLindfors/rust-code-copier.git"
+    },
     "private": true,
     "engines": {
       "vscode": "^1.60.0"
