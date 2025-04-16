@@ -1,57 +1,63 @@
 {
-    "name": "rust-code-copier",
-    "displayName": "Rust Code Copier for LLMs",
-    "description": "Copy Rust project files to clipboard in LLM-friendly format",
-    "version": "0.1.0",
+    "name": "llm-cocop",
+    "displayName": "Code Copier for LLMs",
+    "description": "Copy code files to clipboard in LLM-friendly format (Rust, Python, and more)",
+    "version": "0.2.0",
     "publisher": "EmilLindfors",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/EmilLindfors/rust-code-copier.git"
+        "type": "git",
+        "url": "https://github.com/EmilLindfors/rust-code-copier.git"
     },
     "private": true,
     "engines": {
-      "vscode": "^1.60.0"
+        "vscode": "^1.99.0"
     },
     "categories": [
-      "Other"
+        "Other"
     ],
     "activationEvents": [],
     "main": "./out/extension.js",
     "contributes": {
-      "commands": [
-        {
-          "command": "rust-code-copier.copyProject",
-          "title": "Copy Rust Project for LLM"
-        }
-      ],
-      "menus": {
-        "explorer/context": [
+        "commands": [
           {
-            "when": "explorerResourceIsFolder",
-            "command": "rust-code-copier.copyProject",
-            "group": "navigation"
+            "command": "llm-cocop.copyProject",
+            "title": "Copy Rust Project for LLM"
           }
-        ]
-      }
-    },
-    "scripts": {
-      "vscode:prepublish": "npm run compile",
-      "compile": "tsc -p ./",
-      "watch": "tsc -watch -p ./",
-      "pretest": "npm run compile && npm run lint",
-      "lint": "eslint src --ext ts",
-      "test": "node ./out/test/runTest.js"
-    },
+        ],
+        "menus": {
+          "explorer/context": [
+            {
+              "when": "explorerResourceIsFolder || resourceLangId || explorerResourceIsRoot",
+              "command": "llm-cocop.copyProject",
+              "group": "llm-cocop"
+            }
+          ],
+          "editor/context": [
+            {
+              "command": "llm-cocop.copyProject",
+              "group": "llm-cocop"
+            }
+          ]
+        }
+      },
+      "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+      },
     "devDependencies": {
-      "@types/vscode": "^1.60.0",
-      "@types/glob": "^7.1.3",
-      "@types/node": "^14.14.37",
-      "@typescript-eslint/eslint-plugin": "^5.30.0",
-      "@typescript-eslint/parser": "^5.30.0",
-      "eslint": "^7.19.0",
-      "glob": "^7.1.6",
-      "typescript": "^4.1.3",
-      "vscode-test": "^1.5.0",
-      "@vscode/vsce": "^2.15.0"
+        "@types/vscode": "^1.99.1",
+        "@types/glob": "^7.2.0",
+        "@types/node": "^14.18.63",
+        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/parser": "^5.62.0",
+        "eslint": "^9.2.0",
+        "glob": "^7.2.3",
+        "typescript": "^5.8.3",
+        "vscode-test": "^1.6.1",
+        "@vscode/vsce": "^2.32.0"
     }
-  }
+}

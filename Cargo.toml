@@ -1,9 +1,9 @@
 [package]
-name = "rust-code-copier"
-version = "0.1.0"
+name = "llm-cocop-rs"
+version = "0.2.0"
 edition = "2021"
-description = "A VS Code extension for copying Rust project files to clipboard with LLM-friendly formatting"
-authors = ["Your Name <your.email@example.com>"]
+description = "A VS Code extension for copying code files to clipboard with LLM-friendly formatting"
+authors = ["Emil Lindfors"]
 
 [dependencies]
 walkdir = "2.4.0"
