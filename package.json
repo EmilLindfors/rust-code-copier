@@ -1,0 +1,53 @@
+{
+    "name": "rust-code-copier",
+    "displayName": "Rust Code Copier for LLMs",
+    "description": "Copy Rust project files to clipboard in LLM-friendly format",
+    "version": "0.1.0",
+    "publisher": "your-publisher-name",
+    "private": true,
+    "engines": {
+      "vscode": "^1.60.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "rust-code-copier.copyProject",
+          "title": "Copy Rust Project for LLM"
+        }
+      ],
+      "menus": {
+        "explorer/context": [
+          {
+            "when": "explorerResourceIsFolder",
+            "command": "rust-code-copier.copyProject",
+            "group": "navigation"
+          }
+        ]
+      }
+    },
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "pretest": "npm run compile && npm run lint",
+      "lint": "eslint src --ext ts",
+      "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.60.0",
+      "@types/glob": "^7.1.3",
+      "@types/node": "^14.14.37",
+      "@typescript-eslint/eslint-plugin": "^5.30.0",
+      "@typescript-eslint/parser": "^5.30.0",
+      "eslint": "^7.19.0",
+      "glob": "^7.1.6",
+      "typescript": "^4.1.3",
+      "vscode-test": "^1.5.0",
+      "@vscode/vsce": "^2.15.0"
+    }
+  }
